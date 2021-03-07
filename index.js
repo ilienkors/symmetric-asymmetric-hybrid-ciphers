@@ -1,9 +1,9 @@
 import Client from "./classes/Client.js";
 import DataPackage from "./classes/DataPackage.js";
 
-const fedor = new Client("Fedor", "./folders/fedor");
-const ivan = new Client("Ivan", "./folders/ivan");
-const ulyana = new Client("Ulyana", "./folders/ulyana");
+const fedor = new Client("Fedor", "./folders/fedor", "toor");
+const ivan = new Client("Ivan", "./folders/ivan", "toor1");
+const ulyana = new Client("Ulyana", "./folders/ulyana", "toor2");
 
 fedor.addClients(ivan, ulyana);
 ivan.addClients(fedor, ulyana);
@@ -14,7 +14,7 @@ const fedorsDataPackage = new DataPackage(
   ulyana,
   "Hello Ulyana from Fedor!",
   fedor.path + "/lab1.docx",
-  "1234"
+  fedor.password
 );
 fedor.send(fedorsDataPackage).to(ivan).to(ulyana);
 console.log("------------------------------");

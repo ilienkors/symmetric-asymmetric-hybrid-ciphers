@@ -4,7 +4,7 @@ import { getRandomPrimeNumber, getCoprimeIntegersNumber, getD, stringToCharcodes
 import SymmetricFileCypher from './SymmetricFileCypher.js';
 
 class Client {
-  constructor(name, path) {
+  constructor(name, path, password = "") {
     this.name = name;
     this.path = path;
     const { openKey, privateKey } = this.rsaGen();
@@ -12,6 +12,7 @@ class Client {
     this.privateKey = privateKey;
     this.dataPackage;
     this.clients = {};
+    this.password = password;
   }
 
   rsaGen() {
