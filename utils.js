@@ -7,7 +7,7 @@ const getRandomInt = (minInput, maxInput) => {
 const getRandomPrimeNumber = () => {
   const number = 2;
   const min = getRandomInt(number, number * 100);
-  const max = getRandomInt(number * 100, number * 1000);
+  const max = getRandomInt(number * 1000, number * 10000);
 
   for (let i = min; i < max; i++) {
     let isPrimeNumber = true;
